@@ -1,6 +1,5 @@
-/* Orange Dark scheme (Auto) */
-/* Automatically enabled if user has Dark mode enabled */
-[data-theme="light"],
+
+[data-theme="dark"],
 :root:not([data-theme="dark"]) {
   --background-color: #101010;
   --color: #fff;
