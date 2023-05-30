@@ -13,15 +13,15 @@
   --muted-border-color: #1f2d38;
   --primary: #fff;
   --primary-hover: hsl(195deg, 0%, 50%);
-  --primary-focus: rgba(64, 64, 64);
+  --primary-focus: rgba(64, 64, 64, 0);
   --primary-inverse: #fff;
   --secondary: hsl(205deg, 0%, 41%);
   --secondary-hover: hsl(205deg, 0%, 50%);
-  --secondary-focus: rgba(115, 130, 140, 50);
+  --secondary-focus: rgba(115, 130, 140, 0);
   --secondary-inverse: #fff;
   --contrast: hsl(205deg, 20%, 94%);
   --contrast-hover: #fff;
-  --contrast-focus: rgba(115, 130, 140, 50);
+  --contrast-focus: rgba(115, 130, 140, 0);
   --contrast-inverse: #000;
   --mark-background-color: #161616;
   --mark-color: #11191f;
@@ -108,32 +108,24 @@
 
 * {
     overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    font-family: "HeadUpDaisy";
 }
 
-::-webkit-scrollbar { /* WebKit */
+::-webkit-scrollbar {
     width: 0;
     height: 0;
 }
 
-body {
-  background: linear-gradient(-45deg, #101010, #202020, #121212, #101010);
-  background-size: 400% 100%;
-  animation: gradient 100s ease infinite;
-  height: 100vh;
+h1, h3, h5 {
+  font-family: "HeadUpDaisy";
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+
+body {
+  height: 100vh;
+  display: grid;
 }
 
 article {
@@ -145,6 +137,50 @@ article div {
   padding: 1rem;
 }
 
-body {
+#cover {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top:0;
+  left: 0;
+  background: #000;
+  z-index:999;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 200px;
+  color: #fff;
+}
+
+#whiteout {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top:0;
+  left: 0;
+  background: #fff;
+  z-index:9999;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 200px;
+  color: #fff;
+  opacity: 0
+}
+
+.footer_style {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4ch;
+  padding: 2ch;
+}
+
+.footer_center {
   display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+@font-face {
+    font-family: "HeadUpDaisy";
+    src: url("HeadUpDaisy.ttf") format("truetype");
 }
