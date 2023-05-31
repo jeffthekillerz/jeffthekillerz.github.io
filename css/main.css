@@ -183,8 +183,9 @@ article div {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 4ch;
+  height: 5ch;
   padding: 2ch;
+  font-size: 18px;
 }
 
 .footer_center {
@@ -209,4 +210,9 @@ article div {
   display: inline-block;
   font-size: 16px;
   max-width: 50%;
+}
+
+.inactivelink {
+   pointer-events: none;
+   cursor: default;
 }
