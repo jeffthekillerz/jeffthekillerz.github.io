@@ -315,10 +315,15 @@ for ($i = 0; $i -lt $libcount; $i++) {
 			Rename-Item $FolderMainPath $FolderPath;
 			Remove-Item $ZIPPath;
 
-			$AddonPath = $FolderPath + "\\beatrun";
+            $ModulesPath = $FolderPath + "\\lua";
+			$NewModulesPath = $AddonsPath + "\\lua";
+			Move-Item -Path $ModulesPath -Destination $NewModulesPath;
+
+            $AddonPath = $FolderPath + "\\beatrun";
 			$NewAddonPath = $AddonsPath + "\\beatrun";
 			Remove-Item $NewAddonPath -Force -Recurse;
-			Move-Item -Path $AddonPath -Destination $NewAddonPath;
+            Move-Item -Path $AddonPath -Destination $NewAddonPath;
+            
 			Remove-Item $TempPath -Force -Recurse;
 
 			Write-Host Beatrun Installed!;
