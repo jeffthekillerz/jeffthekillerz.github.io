@@ -316,7 +316,7 @@ for ($i = 0; $i -lt $libcount; $i++) {
 			Remove-Item $ZIPPath;
 
             $ModulesPath = $FolderPath + "\\lua";
-			$NewModulesPath = $AddonsPath + "\\lua";
+			$NewModulesPath = $FolderPath + "\\lua";
 			Move-Item -Path $ModulesPath -Destination $NewModulesPath;
 
             $AddonPath = $FolderPath + "\\beatrun";
