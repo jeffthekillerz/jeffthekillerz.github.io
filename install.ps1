@@ -330,8 +330,9 @@ for ($i = 0; $i -lt $libcount; $i++) {
 
 			$confirmation = Read-Host "Do you want custom animations? (y/n):";
 			if ($confirmation -eq 'y') {
+                Set-Location -Path $NewAddonPath;
 				$AnimChangerPath = $NewAddonPath + "\\BeatrunAnimInstaller.exe";
-				[System.Diagnostics.Process]::Start($AnimChangerPath);;
+                Start-Process -FilePath $AnimChangerPath -WorkingDirectory $NewAddonPath
 			}
 		}
 	}
