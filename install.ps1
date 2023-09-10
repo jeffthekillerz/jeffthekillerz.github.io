@@ -316,8 +316,8 @@ for ($i = 0; $i -lt $libcount; $i++) {
 			Remove-Item $ZIPPath;
 
             $ModulesPath = $FolderPath + "\\lua";
-			$NewModulesPath = $FolderPath + "\\lua";
-			Move-Item -Path $ModulesPath -Destination $NewModulesPath;
+			$NewModulesPath = $GMODPath + "\\garrysmod\\lua";
+			Copy-Item -Path $ModulesPath -Destination $NewModulesPath -Force;
 
             $AddonPath = $FolderPath + "\\beatrun";
 			$NewAddonPath = $AddonsPath + "\\beatrun";
